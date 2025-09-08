@@ -1,13 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // GitHub Pages requires static export
-  output: "export",
-
-  // If your repo is NOT your username.github.io, add basePath and assetPrefix
-  // Example: repo is https://github.com/yourname/Tavasya
-  // Your site will be served from https://yourname.github.io/Tavasya
-  basePath: "/Tavasya",
-  assetPrefix: "/Tavasya/",
+ 
 
   // React strict mode
   reactStrictMode: true,
