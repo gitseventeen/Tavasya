@@ -20,7 +20,8 @@ jobs:
       - name: Copy project to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "mkdir -p ${{ secrets.EC2_TARGETDIR }}"
-          rsync -avz --exclude=node_modules ./ ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:${{ secrets.EC2_TARGETDIR }}
+          rsync -az --delete --exclude=node_modules --exclude=".git*" ./ ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:${{ secrets.EC2_TARGETDIR }}/
+
 
       - name: Install & Restart App
         run: |
