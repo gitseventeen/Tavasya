@@ -1,0 +1,280 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 100px;
+	text-align: center;
+
+	overflow: scroll;
+}
+
+.circle {
+	width: 500px;
+	height: 500px;
+	border-style: solid;
+	border-radius: 250px;
+	position: relative;
+	view-timeline-name: --rotation;
+
+	transform: scale(0.8);
+}
+
+.inner_circle {
+	width: 140px;
+	height: 140px;
+	padding: 10px;
+	border-radius: 70px;
+	background-color: #2898a1;
+	top: -1%;
+	position: absolute;
+	top: -65px;
+	left: -65px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.inner_circle p {
+	font-size: 16px;
+	line-height: unset;
+	color: var(--bg-color);
+	font-weight: bold;
+}
+
+.rotate:nth-child(7) {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 10px;
+	height: 250px;
+
+	transform: rotate(0deg);
+	transform-origin: bottom;
+}
+
+.rotate:nth-child(6) {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 10px;
+	height: 250px;
+	transform-origin: bottom;
+	animation-name: rotation2;
+	animation-duration: 2s;
+	animation-delay: 5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+	animation-timeline: scroll(root);
+	animation-range: 40% 50%;
+}
+.rotate:nth-child(6) .inner_circle {
+	transform: rotate(-51.4deg);
+}
+
+@keyframes rotation2 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(51.4deg);
+	}
+}
+
+.rotate:nth-child(5) {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 10px;
+	height: 250px;
+	transform-origin: bottom;
+	animation-name: rotation3;
+	animation-duration: 2s;
+	animation-delay: 4s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+	animation-timeline: scroll(root);
+	animation-range: 40% 50%;
+}
+
+.rotate:nth-child(5) .inner_circle {
+	transform: rotate(-102.8deg);
+}
+@keyframes rotation3 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(102.8deg);
+	}
+}
+
+.rotate:nth-child(4) {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 10px;
+	height: 250px;
+	transform-origin: bottom;
+
+	animation-name: rotation4;
+	animation-duration: 2s;
+	animation-delay: 3s;
+
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+	animation-timeline: scroll(root);
+	animation-range: 40% 50%;
+}
+
+.rotate:nth-child(4) .inner_circle {
+	transform: rotate(-154.2deg);
+}
+@keyframes rotation4 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(154.2deg);
+	}
+}
+
+.rotate:nth-child(3) {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 10px;
+	height: 250px;
+	transform-origin: bottom;
+	animation-name: rotation5;
+	animation-duration: 2s;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+	animation-timeline: scroll(root);
+	animation-range: 40% 50%;
+}
+.rotate:nth-child(3) .inner_circle {
+	transform: rotate(-204.84deg);
+}
+
+@keyframes rotation5 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(204.84deg);
+	}
+}
+
+.rotate:nth-child(2) {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 10px;
+	height: 250px;
+	transform-origin: bottom;
+	animation-name: rotation6;
+	animation-duration: 2s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+	animation-timeline: scroll(root);
+	animation-range: 40% 50%;
+}
+
+.rotate:nth-child(2) .inner_circle {
+	transform: rotate(-257deg);
+}
+
+@keyframes rotation6 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(257deg);
+	}
+}
+
+.rotate:nth-child(1) {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 10px;
+	height: 250px;
+	transform-origin: bottom;
+	animation-name: rotation7;
+	animation-duration: 2s;
+	animation-delay: 0s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+
+	animation-timeline: scroll(root);
+	animation-range: 40% 50%;
+}
+
+.rotate:nth-child(1) .inner_circle {
+	transform: rotate(-308.4deg);
+}
+
+@keyframes rotation7 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(308.4deg);
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.circle {
+		width: 250px;
+		height: 250px;
+		border-radius: 125px;
+		transform: scale(1);
+	}
+
+	.inner_circle {
+		width: 70px;
+		height: 70px;
+		padding: 10px;
+		border-radius: 35px;
+
+		top: -30px;
+		left: -30px;
+	}
+
+	.rotate:nth-child(1),
+	.rotate:nth-child(2),
+	.rotate:nth-child(3),
+	.rotate:nth-child(4),
+	.rotate:nth-child(5),
+	.rotate:nth-child(6),
+	.rotate:nth-child(7) {
+		top: 0;
+		left: 50%;
+		width: 10px;
+		height: 125px;
+
+		animation-duration: 0.5s;
+		animation-delay: 1s;
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-out;
+		animation-timeline: initial;
+	}
+
+	.inner_circle p {
+		font-size: 8px;
+		line-height: unset;
+		color: var(--bg-color);
+		font-weight: bold;
+	}
+}

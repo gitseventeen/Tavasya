@@ -1,0 +1,63 @@
+.ReactModal__Body--open {
+	overflow-y: hidden;
+  }
+  
+.header {
+	composes: header from "./Home.module.css";
+}
+
+.header_inner {
+	composes: header_inner from "./Home.module.css";
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.header_container {
+	composes: header_container from "./Home.module.css";
+}
+
+.title {
+	composes: title from "./Home.module.css";
+}
+
+.description {
+	composes: description from "./Home.module.css";
+}
+
+.video {
+	composes: video from "./Home.module.css";
+}
+
+/* -------------------------------------------- */
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 40px;
+	column-gap: 8vw;
+	margin-top: 40px;
+}
+
+.project {
+	position: relative;
+	border-radius: 20px;
+}
+
+.image {
+	border-radius: 20px;
+}
+
+.inner {
+	position: absolute;
+	bottom: 5%;
+	left: 5%;
+}
+
+.modal_active {
+	overflow: hidden;
+}
+
+/* ---------------------------------- */
+
+

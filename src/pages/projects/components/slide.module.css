@@ -1,0 +1,32 @@
+.slide {
+	width: 100vw;
+	height: 100vh;
+	top: 0%;
+	border-radius: 20px;
+}
+
+.item {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	border-radius: 20px;
+}
+
+.inner > h3 {
+	font-size: var(--font-size-m);
+	padding-bottom: 10px;
+}
+
+.inner {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 30px;
+	border-top-left-radius: 20px;
+	background-color: #fff2f1;
+
+}
+
+.default-nav {
+	left: 0px;
+}

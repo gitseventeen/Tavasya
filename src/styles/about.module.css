@@ -1,0 +1,92 @@
+.header {
+	composes: header from "./Home.module.css";
+}
+
+.header_container {
+	composes: header_container from "./Home.module.css";
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.header_inner {
+	composes: header_inner from "./Home.module.css";
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.title {
+	composes: title from "./Home.module.css";
+}
+
+.description {
+	composes: description from "./Home.module.css";
+}
+
+.video {
+	composes: video from "./Home.module.css";
+}
+
+/* ----------------------------------------------- */
+
+.container4 {
+	width: 80vw;
+	top: 25%;
+	left: 0;
+	margin-top: 10vh;
+	text-align: start;
+}
+
+.container1 {
+	top: 0%;
+	left: 0;
+	margin-top: 10vh;
+}
+
+.container2 {
+	bottom: 0%;
+	right: 0;
+	text-align: end;
+	padding-left: 10vw;
+}
+
+/* -------------------------------------------------- */
+
+.board {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	row-gap: var(--v-space);
+	margin-top: var(--v-space);
+	text-align: center;
+}
+
+.content {
+	text-align: center;
+}
+
+/* ------------------------------------------------- */
+
+.container3 {
+	text-align: center;
+}
+.inner {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+	.board {
+		justify-content: space-evenly;
+	}
+
+	.container4 {
+		font-size: var(--font-size-m);
+		width: 100vw;
+	}
+
+}

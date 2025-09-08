@@ -1,0 +1,138 @@
+.header {
+	background-size: cover;
+	padding: 50px;
+}
+
+.title {
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	gap: var(--h-space);
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+/* ----------------------------------------------- */
+
+.form {
+	max-width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 24px;
+	border: 2px solid #2898a1;
+	text-align: center;
+	background: #fff2f1;
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+	margin-top: var(--v-space);
+}
+
+.div {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+.input {
+	width: 50%;
+	border-radius: 8px;
+	background: #fff2f1;
+	color: #2898a1;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	border: 0px;
+	padding: 20px;
+	margin: 20px;
+	font-weight: bold;
+	text-overflow: ellipsis;
+}
+
+.input_text {
+	background: #fff2f1;
+	color: #2898a1;
+	border-radius: 8px;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	border: 0px;
+	width: 100%;
+	min-width: 200px;
+	max-width: 100%;
+	min-height: 50px;
+	max-height: 250px;
+	padding: 20px;
+	margin: 20px;
+	font-weight: bold;
+}
+
+.button {
+	composes: button from "../components/button.module.css";
+	width: 100px;
+	height: 30px;
+}
+
+/*  -------------------------------------------  */
+
+.container2 {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.circle {
+	color: #414042;
+
+	width: 200px;
+	height: 200px;
+	padding: 30px;
+	gap: var(--gap);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 25px;
+	background: linear-gradient(145deg, #fff2f1, #eee1e0);
+	box-shadow: 8px 8px 26px #ebdfde, -8px -8px 26px #ffffff;
+
+	transition-property: background, box-shadow, color;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
+}
+
+.circle:hover,
+.circle:active {
+	color: #fff2f1;
+	font-weight: bold;
+	font-style: italic;
+	background: #414042;
+	box-shadow: inset 5px 5px 10px #292929, inset -5px -5px 10px #4c4c4c;
+}
+
+.circle > svg {
+	transition-property: fill;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
+	fill: #414042;
+}
+
+.circle:hover > svg,
+.circle:active > svg {
+	fill: #fff2f1;
+}
+
+@media only screen and (max-width: 700px) {
+	.div {
+	}
+	.input,
+	.input_text {
+		font-size: 10px;
+		padding: 10px;
+	}
+}

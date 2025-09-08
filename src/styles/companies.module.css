@@ -1,0 +1,102 @@
+.header {
+	background-size: cover;
+	padding: 50px;
+}
+
+.title {
+	text-align: center;
+}
+
+/* ----------------------------------------------- */
+
+/* .container {
+	display: flex;
+	justify-content: space-evenly;
+	gap: var(--gap);
+
+    margin-left: var(--h-space);
+    margin-right: var(--h-space);
+    margin-top: var(--v-space);
+    margin-bottom: var(--v-space);
+
+    padding: 20px;
+	border-radius: 20px;
+	background: #fff2f1;
+	box-shadow: 16px 16px 70px #918a89, -35px -35px 70px #ffffff;
+} */
+
+/* ------------------------------------------------- */
+
+.company {
+	position: relative;
+	background-size: cover;
+	background-attachment: fixed;
+	width: 100vw;
+	height: 100vh;
+}
+
+.content {
+	position: absolute;
+	bottom: var(--v-space);
+	left: var(--h-space);
+	max-width: 50%;
+	background: rgb(255, 242, 241);
+	padding: 20px;
+	border-radius: 20px;
+	overflow: scroll;
+	max-height: 50%;
+}
+.content2 {
+	left: auto;
+	right: var(--h-space);
+}
+
+.description {
+	font-size: var(--font-size-s);
+	font-weight: normal;
+}
+
+.company1 {
+	background-image: url("/images/companies/hydro-epc.webp");
+}
+
+.company2 {
+	background-image: url("/images/companies/nirupamagroup.jpg");
+}
+
+.company3 {
+	background-image: url("/images/companies/tavasya-capital.jpg");
+}
+.company4 {
+	background-image: url("/images/companies/stanforth.webp");
+}
+.company5 {
+	background-image: url("/images/companies/aic.jpg");
+}
+
+@media only screen and (max-width: 1400px) {
+	.company {
+		height: 100vh;
+	}
+
+	.content {
+		max-width: 100%;
+
+		left: 0;
+		right: 0;
+		bottom: 0;
+		max-height: 50%;
+	}
+
+	.description {
+		font-size: var(--font-size-s);
+	}
+
+	.company {
+		position: relative;
+		background-size: cover;
+		background-attachment: initial;
+		width: 100vw;
+		height: 100vh;
+	}
+}

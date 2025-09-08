@@ -1,0 +1,12 @@
+.container {
+	animation: ticker 2s cubic-bezier(1, -0.16, 0.06, 1.51) infinite;
+}
+
+@keyframes ticker {
+	from {
+		top: 0;
+	}
+	to {
+		top: 100px;
+	}
+}
