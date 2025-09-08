@@ -1,35 +1,36 @@
-name: Deploy to AWS EC2
+name: Push-to-EC2
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - master   # or main, depending on your default branch
 
 jobs:
   deploy:
+    name: Deploy to EC2 on branch push
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout the files
+        uses: actions/checkout@v2
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.8.0
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_KEY }}
+          REMOTE_HOST: ${{ secrets.EC2_HOST }}
+          REMOTE_USER: ${{ secrets.EC2_USERNAME }}
+          TARGET: ${{ secrets.EC2_TARGETDIR }}
+
+      - name: Execute remote SSH commands
+        uses: appleboy/ssh-action@master
         with:
-          ssh-private-key: ${{ secrets.EC2_KEY }}
-
-      - name: Copy project to EC2
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "mkdir -p ${{ secrets.EC2_TARGETDIR }}"
-          rsync -az --delete --exclude=node_modules --exclude=".git*" ./ ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:${{ secrets.EC2_TARGETDIR }}/
-
-
-      - name: Install & Restart App
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "
-            cd ${{ secrets.EC2_TARGETDIR }} &&
-            npm install &&
-            npm run build &&
-            pm2 stop myapp || true &&
-            pm2 start npm --name myapp -- start &&
-            pm2 save
-          "
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            cd ${{ secrets.EC2_TARGETDIR }}
+            git pull origin master   # pull latest code
+            npm install --production
+            npm run build
+            pm2 restart next-app || pm2 start npm --name "next-app" -- run start
